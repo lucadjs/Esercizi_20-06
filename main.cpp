@@ -36,7 +36,7 @@ string nonNumero;
 void mainEsercizio1();
 void mainEsercizio2();
 void mainEsercizio3();
-void erroreDigitazioneMenuEsercizi();
+
 
     // Dichiarazioni funzioni
 
@@ -60,7 +60,7 @@ int contaNat(int cnat);
 // CONTROLLO ERRORI
 bool isValidNumber(const string& str);
 bool seNumeroValido(int numero);
-char controllaInput();
+void erroreDigitazioneMenuEsercizi();
 
 // Main Menù principale
 int main()
