@@ -456,21 +456,6 @@ bool isValidNumber(const string& str) {
 }
 
 
-//char checkInput() {
-//    char input;
-//    while (true) {
-//        input = cin.get();
-//        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignora qualsiasi altro carattere dopo il primo
-//        if (isdigit(input) || input == 's' || input == 'n') {
-//            break; // L'input è un numero intero valido (singola cifra) o un carattere valido 's' o 'n'
-//        } else {
-//            cerr << "\rInserisci una cifra (0-9) o 's' o 'n': ";
-//            cout.flush(); // Assicurati che il messaggio venga visualizzato immediatamente
-//        }
-//    }
-//    return input;
-//}
-
 //------ Funzione che rende errore se l'input non è un numero --------------------------
 bool seNumeroValido(int numero) {
     if (numero) {
