@@ -29,6 +29,7 @@ const string msgErroreLettere = rosso_on + lampeggia_on + "!!! NON E' UNA LETTER
 // Dichiarazioni variabili globali
 char sceltaMenuEsercizi;
 string nonNumero;
+char conferma;
 
     // Procedure
 // MAIN
@@ -61,12 +62,12 @@ int contaNat(int cnat);
 bool isValidNumber(const string& str);
 bool seNumeroValido(int numero);
 void erroreDigitazioneMenuEsercizi();
+void confermaScelta();
 
 // Main Menù principale
 int main()
 {
     char sceltaMenu;
-    char conferma;
 
     do
     {
@@ -335,33 +336,32 @@ while(true){
 
     if(numero < 0)
     {
-        cout << grassetto_on << rosso_on << lampeggia_on << "!!! ATTENZIONE " << numero << " NON E' UN NUMERO NATURALE !!! \n" << reset_testo << "ORA LO CONVERTO." << reset_testo << endl;
+        cerr << grassetto_on << rosso_on << lampeggia_on << "!!! ATTENZIONE " << numero << " NON E' UN NUMERO NATURALE !!! \n" << reset_testo << "ORA LO CONVERTO." << reset_testo << endl;
 
         converti = valoreAssoluto(numero);
         numero = converti;
     }
 
-    if(controllaNaturale(numero))
+    while(controllaNaturale(numero))
     {
-        if(numero == 0)
+         if(numero == 0)
         {
             cout << verde_on << corsivo_on << "OK " << numero << " e' un numero naturale." << reset_testo << endl;
-            numNat = 1;
+            break;;
         }
-        else
+        if(numero > 1)
         {
             cout << verde_on << corsivo_on << "OK " << numero << " e' un numero naturale." << reset_testo << endl;
 
             numNat = contaNat(numero);
-        }
-        if(numNat > 1)
-        {
+
             cout << "Rilevati " << verde_on << grassetto_on << lampeggia_on << "N" << grado << " " << numNat << reset_testo << " numeri naturali." << endl << endl;
         }
-        else
+        else if(numero = 1)
         {
             cout << "Rilevato " << verde_on << grassetto_on << lampeggia_on << "N" << grado << " " << numNat << reset_testo << " numero naturale." << endl << endl;
         }
+            break;
     }
 }
 
@@ -467,4 +467,17 @@ bool seNumeroValido(int numero) {
         return false;
     }
 }
-//_------------------------ FINE --------------------------------------------------------------------------
+
+//------------------- Funzione di conferma scelta menù ----------------------------------------------------------
+//void confermaScelta(){
+//
+//
+//while(conferma != 's' && conferma != 'n')
+//            {
+//                cout << rosso_on << grassetto_on << "!!! Selezionare una opzione valida s/n !!!" << reset_testo;
+//                cin >> conferma;
+//            }
+//        }
+//        while (conferma == 'n');
+//
+//}
